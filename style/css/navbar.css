@@ -1,0 +1,81 @@
+@import url(mainDesign.css);
+/*--------------------------------- NAVBAR ---------------------------------*/
+#mainNav {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  background-color: var(--color1) !important;
+  width: 100vw !important;
+}
+#mainNav .navbar-toggler {
+  padding: 0.75rem !important;
+  font-size: 0.75rem !important;
+  font-family: var(--secondary-font) !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(0, 0, 0) !important;
+}
+#mainNav .navbar-brand {
+  color: white !important;
+  font-family: var(--secondary-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.0625em !important;
+  text-transform: uppercase !important;
+  text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(0, 0, 0) !important;
+  display: flex !important;
+}
+#mainNav .navbar-brand img {
+  height: 1.5rem !important;
+}
+#mainNav .navbar-brand span {
+  margin-left: 8px !important;
+  font-size: 0.95rem !important;
+}
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-family: var(--secondary-font) !important;
+  font-size: 0.95rem !important;
+  color: white !important;
+  letter-spacing: 0.0625em !important;
+  text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(0, 0, 0) !important;
+}
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: var(--color4) !important;
+}
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+    padding-right: 0.5rem !important;
+    border: none !important;
+    background-color: transparent !important;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out !important;
+    background-color: var(--color1) !important;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.5em !important;
+    transition: font-size 0.3s ease-in-out !important;
+    align-items: center !important;
+  }
+  #mainNav .navbar-brand img {
+    height: 2rem !important;
+    transition: height 0.3s ease-in-out !important;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+    background-color: var(--color1) !important;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em !important;
+  }
+  #mainNav.navbar-shrink .navbar-brand svg,
+  #mainNav.navbar-shrink .navbar-brand img {
+    height: 1.5rem !important;
+  }
+  #mainNav .navbar-nav .nav-item {
+    margin-right: 0rem !important;
+  }
+  #mainNav .navbar-nav .nav-item:last-child {
+    margin-right: 0 !important;
+  }
+}

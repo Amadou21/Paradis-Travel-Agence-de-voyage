@@ -1,0 +1,15 @@
+.pop_up{
+    margin: 0;
+    padding:20px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 9999;
+    letter-spacing: initial;
+    color:rgb(250, 112, 112);
+    background-color: white;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

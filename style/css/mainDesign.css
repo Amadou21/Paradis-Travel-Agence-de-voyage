@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Poppins;
+    src: url('../../res/fonts/poppins.ttf');
+}
+
+@font-face {
+    font-family: Stanley;
+    src: url('../../res/fonts/LovelyHome-9aBZ.ttf');
+}
+
+:root {
+    --color1: #120D31;
+    --color2: #24C4f9;
+    --color3: #B9E4FF;
+    --color4: #FF1D1D;
+    --color5: #FFA245;
+    --color6: rgb(0, 119, 255);
+    --secondary-font: 'Poppins';
+    --main-font: 'Stanley';
+}

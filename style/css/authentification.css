@@ -1,0 +1,167 @@
+@import url(mainDesign.css);
+@import url(keyframes.css);
+
+body{
+    margin:0;
+    background: url('../../res/images/connexion/dubai_portrait.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--secondary-font);
+}
+
+h1{
+    font-family: var(--main-font);
+    color: var(--color6);
+    letter-spacing: 5px;
+}
+
+a{
+    color: var(--color4);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main_zone{
+    background: rgba(255, 255, 255, 0.384);
+    z-index: 2;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.397), 5px 5px 15px rgba(128, 128, 128, 0.315);
+}
+
+.main_zone{
+    width: 350px;
+    height: fit-content;
+    border-radius: 15px;
+}
+
+.fa-window-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    transform: translate(15px, -15px);
+    transition: all .2s ease-in;
+}
+
+.fa-window-close:hover{
+    font-size: 40px;
+}
+
+.logo{
+    width: 150px;
+    border-radius: 7.5px;
+    box-shadow: 0px 10px 15px rgba(133, 133, 133, 0.438);
+}
+
+.authentification_form_zone{
+    display: flex;
+    justify-content: center;
+}
+
+.authentification_form_zone form{
+    width:80%;
+}
+
+.authentification_form_zone form .input_zone{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authentification_form_zone form .input_zone *{
+    margin: 0px 5px;
+}
+
+.authentification_form_zone form .input_zone i{
+    color: var(--color6) ;
+    font-size: 20px;
+}
+
+.authentification_form_zone form .input_zone input{
+    background: none;
+    padding: 5px 0px;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.432);
+    outline: none;
+    font-size: 16px;
+    width:calc( 80% - 25px);
+    font-weight: bold;
+    color: var(--color1);
+}
+
+.authentification_form_zone form button{
+    width: 82%;
+    background: var(--color6);
+    border: none;
+    padding: 10px;
+    border-radius: 7.5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 5px 7px rgba(128, 128, 128, 0.342);
+    cursor: pointer;
+    border: 2px solid var(--color6);
+    transition: all ease-in .1s;
+}
+
+.authentification_form_zone form button:hover{
+    background: none;
+    border: 2px dashed var(--color6);
+    color: var(--color6);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer *{
+    margin: 0;
+    padding: 0;
+}
+
+footer h3{
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    padding: 5px 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.avion_main_zone {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.avion_main_zone img{
+    width: 50px;
+    animation: avion 3s linear infinite;
+}
+
+.avion_main_zone img:nth-child(1){
+    animation-delay: 1s;
+    margin-bottom :120px;
+}
+.avion_main_zone img:nth-child(3){
+    animation-delay: 2s;
+    margin-bottom: 240px;
+}
+.avion_main_zone img:nth-child(4){
+    animation-delay: 1.5s;
+    margin-bottom: 160px
+}

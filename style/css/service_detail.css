@@ -1,0 +1,200 @@
+@import url(mainDesign.css);
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--secondary-font), sans-serif;
+}
+body{
+    line-height: 1.5;
+}
+#card-wrapper{
+    max-width: 1100px;
+    margin: 50px auto;
+}
+#card-wrapper img{
+    width: 100%;
+    display: block;
+}
+#card-wrapper .img-display{
+    overflow: hidden;
+}
+#card-wrapper .img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+#card-wrapper .img-showcase img{
+    min-width: 100%;
+}
+#card-wrapper .img-select{
+    display: flex;
+}
+#card-wrapper .img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+#card-wrapper .img-item:hover{
+    opacity: 0.8;
+}
+#card-wrapper .product-content{
+    padding: 2rem 1rem;
+   
+}
+#card-wrapper .product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 2rem 0;
+}
+#card-wrapper .product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+#card-wrapper .product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #24C4f9;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+#card-wrapper .product-link:hover{
+    opacity: 0.9;
+}
+#card-wrapper .product-rating{
+    color: #ffc107;
+}
+
+#card-wrapper .product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+#card-wrapper .product-price span{
+    font-weight: 400;
+}
+
+#card-wrapper .new-price span{
+    color: #24C4f9;
+}
+#card-wrapper .product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+#card-wrapper .product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+#card-wrapper .product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+#card-wrapper .product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/check.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+#card-wrapper .product-detail ul li span{
+    font-weight: 400;
+}
+#card-wrapper .purchase-info{
+    margin: 1.5rem 0;
+}
+#card-wrapper.purchase-info input,
+#card-wrapper .purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+#card-wrapper.purchase-info input{
+    width: 60px;
+}
+#card-wrapper .purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+    transition: .5s;
+}
+
+#card-wrapper .purchase-info .btn:hover{
+    transform: scale(1.1);
+}
+
+#card-wrapper .purchase-info .btn:last-of-type{
+    background: #24C4f9;
+}
+#card-wrapper .purchase-info .btn:hover{
+    opacity: 0.9;
+}
+#card-wrapper .social-links{
+    display: flex;
+    align-items: center;
+}
+#card-wrapper .social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+#card-wrapper .social-links a:hover{
+    background: #24C4f9;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    #card-wrapper .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    #card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #card-wrapper .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #card-wrapper .product-content{
+        padding-top: 0;
+    }
+}
