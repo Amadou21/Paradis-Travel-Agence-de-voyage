@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 27 oct. 2022 à 02:36
--- Version du serveur :  8.0.30-0ubuntu0.20.04.2
--- Version de PHP : 7.4.3
+-- Généré le : mar. 11 fév. 2025 à 16:05
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,17 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `action` (
-  `idAction` int NOT NULL,
+  `idAction` int(11) NOT NULL,
   `contenue` text NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `action`
---
-
-INSERT INTO `action` (`idAction`, `contenue`, `date`) VALUES
-(1, 'df\r\nsg\r\nseh\r\n', '2022-10-27 02:29:18');
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -48,22 +40,22 @@ INSERT INTO `action` (`idAction`, `contenue`, `date`) VALUES
 --
 
 CREATE TABLE `infoSystem` (
-  `idInfoSystem` int NOT NULL,
+  `idInfoSystem` int(11) NOT NULL,
   `email` varchar(60) DEFAULT NULL,
   `tel` varchar(20) DEFAULT NULL,
   `instagram` varchar(100) DEFAULT NULL,
   `facebook` varchar(100) DEFAULT NULL,
   `snapchat` varchar(100) DEFAULT NULL,
   `whatsapp` varchar(30) DEFAULT NULL,
-  `lieu` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `lieu` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `infoSystem`
 --
 
 INSERT INTO `infoSystem` (`idInfoSystem`, `email`, `tel`, `instagram`, `facebook`, `snapchat`, `whatsapp`, `lieu`) VALUES
-(1, 'bore.younous59@gmail.com', '66738165', '6565', '64', NULL, '654', NULL);
+(1, 'ad.maiga2107@gmail.com', 'test', 'test', 'test', 'test', 'test', 'Everywhere');
 
 -- --------------------------------------------------------
 
@@ -72,18 +64,11 @@ INSERT INTO `infoSystem` (`idInfoSystem`, `email`, `tel`, `instagram`, `facebook
 --
 
 CREATE TABLE `message` (
-  `idMessage` int NOT NULL,
+  `idMessage` int(11) NOT NULL,
   `contenue` text NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_messageSender` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `message`
---
-
-INSERT INTO `message` (`idMessage`, `contenue`, `date`, `id_messageSender`) VALUES
-(1, 'vkbnxdf\r\nfgj\r\ndfgb', '2022-10-27 02:20:32', 1);
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  `id_messageSender` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -92,18 +77,11 @@ INSERT INTO `message` (`idMessage`, `contenue`, `date`, `id_messageSender`) VALU
 --
 
 CREATE TABLE `messageSender` (
-  `idMessageSender` int NOT NULL,
+  `idMessageSender` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `email` varchar(60) NOT NULL,
   `tel` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `messageSender`
---
-
-INSERT INTO `messageSender` (`idMessageSender`, `nom`, `email`, `tel`) VALUES
-(1, 'bore', 'bore.younous59@gmail.com', '66738165');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -112,17 +90,10 @@ INSERT INTO `messageSender` (`idMessageSender`, `nom`, `email`, `tel`) VALUES
 --
 
 CREATE TABLE `statistique` (
-  `idStatistique` int NOT NULL,
-  `nombreVisite` int DEFAULT NULL,
-  `nombreInteraction` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `statistique`
---
-
-INSERT INTO `statistique` (`idStatistique`, `nombreVisite`, `nombreInteraction`) VALUES
-(1, 0, 0);
+  `idStatistique` int(11) NOT NULL,
+  `nombreVisite` int(11) DEFAULT NULL,
+  `nombreInteraction` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -131,20 +102,20 @@ INSERT INTO `statistique` (`idStatistique`, `nombreVisite`, `nombreInteraction`)
 --
 
 CREATE TABLE `user` (
-  `idUser` int NOT NULL,
+  `idUser` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
   `login` varchar(60) NOT NULL,
   `motDePasse` varchar(60) NOT NULL,
   `role` varchar(60) NOT NULL DEFAULT 'admin'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`idUser`, `nom`, `prenom`, `login`, `motDePasse`, `role`) VALUES
-(1, 'bore', 'Younouss', 'bore.younous59@gmail.com', '123456', 'admin');
+(1, 'Maiga', 'Amadou', 'ad.maiga2107@gmail.com', '123456', 'admin');
 
 -- --------------------------------------------------------
 
@@ -153,19 +124,11 @@ INSERT INTO `user` (`idUser`, `nom`, `prenom`, `login`, `motDePasse`, `role`) VA
 --
 
 CREATE TABLE `visite` (
-  `idVisite` int NOT NULL,
+  `idVisite` int(11) NOT NULL,
   `nomPage` varchar(60) NOT NULL,
-  `nombreVisite` int NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `visite`
---
-
-INSERT INTO `visite` (`idVisite`, `nomPage`, `nombreVisite`) VALUES
-(1, 'acceuil', 5),
-(2, 'profil', 2);
+  `nombreVisite` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Index pour les tables déchargées
@@ -222,43 +185,43 @@ ALTER TABLE `visite`
 -- AUTO_INCREMENT pour la table `action`
 --
 ALTER TABLE `action`
-  MODIFY `idAction` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `infoSystem`
 --
 ALTER TABLE `infoSystem`
-  MODIFY `idInfoSystem` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idInfoSystem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `idMessage` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `messageSender`
 --
 ALTER TABLE `messageSender`
-  MODIFY `idMessageSender` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idMessageSender` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `statistique`
 --
 ALTER TABLE `statistique`
-  MODIFY `idStatistique` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idStatistique` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `visite`
 --
 ALTER TABLE `visite`
-  MODIFY `idVisite` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idVisite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
